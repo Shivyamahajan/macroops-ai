@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.env
+venv/
+*.pkl
+*.keras
+.DS_Store
+data/processed/
