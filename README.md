@@ -48,14 +48,24 @@ management, and AI-powered assistance.
 
 ## Current Status
 
-- [x] Repository setup
-- [x] Dummy data loaded
-- [ ] Industry research
-- [ ] AS-IS process map
-- [ ] Pain point analysis
-- [ ] Business problem statement
-- [ ] Product requirements
-- [ ] Data engineering
-- [ ] ML models
-- [ ] GenAI components
-- [ ] Deployment
+### Completed
+- Repository setup
+- Dummy data loaded
+- Industry research
+
+### In Progress
+- AS-IS process mapping
+- Pain-point analysis
+- Business problem statement
+- Product strategy
+- Product requirements
+
+### Upcoming
+- Data engineering
+- Analytics
+- ML models
+- GenAI components
+- MVP development
+- Testing and UAT
+- Deployment
+- Business impact evaluation
