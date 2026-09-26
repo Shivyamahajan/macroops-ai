@@ -334,4 +334,146 @@ For example:
 
 ---
 
-**End of PRD Part 1**
+---
+
+## 7. MVP Scope Definition
+
+Not everything in this PRD will be built in the first version. The MVP includes only what is necessary to demonstrate the complete value proposition.
+
+### Priority Classification
+
+**P0 — Must Have (MVP Core):**
+
+These features are essential for demonstrating the core MacroOps AI value proposition.
+
+| Feature                            | Justification                                                        |
+| ---------------------------------- | -------------------------------------------------------------------- |
+| Operations Overview Dashboard      | Core visibility requirement — US-001, FR-001 to FR-005               |
+| SLA Risk Prediction with SHAP      | Core prediction requirement — US-002, FR-006 to FR-010               |
+| Exception Detection and Management | Core proactive detection — US-004, FR-011 to FR-014                  |
+| AI Operations Copilot              | Core natural language access — US-003, FR-015 to FR-018              |
+| SOP RAG Assistant                  | Core knowledge access for frontline users — US-011, FR-019 to FR-022 |
+| Inventory Status Page              | Core inventory visibility — US-007                                   |
+| Business Impact Dashboard          | Required for Phase 03 evaluation                                     |
+
+**P1 — Should Have (Post-MVP):**
+
+These features provide additional value but are not required for the core MVP demonstration.
+
+| Feature                               | Reason Deferred                                              |
+| ------------------------------------- | ------------------------------------------------------------ |
+| Multi-store comparison view           | Requires more complex data aggregation                       |
+| Individual rider performance profiles | Useful extension but not part of the core value proposition  |
+| Predictive rider shortage alert       | Builds on the core prediction capability; add if time allows |
+| Historical trend analysis             | Requires suitable time-series features in the MVP data       |
+
+**P2 — Nice to Have (Future Roadmap):**
+
+These features are deliberately excluded from the current phase.
+
+| Feature                 | Reason                                               |
+| ----------------------- | ---------------------------------------------------- |
+| Voice interface         | Out of scope per problem statement                   |
+| Multilingual support    | Out of scope per problem statement                   |
+| Live system integration | Out of scope — demonstration uses synthetic data     |
+| Mobile native app       | Responsive web application is sufficient for the MVP |
+
+---
+
+## 8. Technical Requirements
+
+**TR-001 — Programming Language:**
+Python 3.11+.
+
+**TR-002 — Data Storage:**
+CSV files will be used for synthetic demonstration data. ChromaDB will be used for vector storage. No production database is required for the MVP.
+
+**TR-003 — ML Framework:**
+Scikit-learn and XGBoost will be used for the SLA prediction model, subject to final model evaluation.
+
+**TR-004 — GenAI Stack:**
+
+* **LLM:** Qwen2.5:1.5B via Ollama for local inference
+* **Embeddings:** all-MiniLM-L6-v2 via HuggingFace
+* **Vector Database:** ChromaDB
+* **Framework:** LangChain
+
+**TR-005 — Backend:**
+FastAPI will be used to provide REST API endpoints for supported application functionality.
+
+**TR-006 — Frontend:**
+Streamlit will be used to build the interactive operations dashboard.
+
+**TR-007 — Deployment:**
+Streamlit Community Cloud is the intended deployment target for the demonstration, subject to compatibility, resource limits, and final deployment testing.
+
+**TR-008 — Version Control:**
+GitHub will be used to maintain all project code, documentation, configuration, and required synthetic/demo data.
+
+**TR-009 — Research Paper:**
+Overleaf (LaTeX) will be used for the research paper and will be updated alongside the technical work.
+
+---
+
+## 9. Data Requirements
+
+**DR-001:**
+The system shall use the five synthetic datasets provided for the project:
+
+* `orders.csv` — 100,000 rows
+* `picking.csv` — 25,000 rows
+* `delivery.csv` — 25,000 rows
+* `inventory.csv` — 40,000 rows
+* `workforce.csv` — 10,000 rows
+
+**DR-002:**
+A master operational dataset shall be created by joining the relevant tables using `order_id` and `store_id` as available keys. Left joins should be used where appropriate to preserve the order-level records required for operational analysis.
+
+**DR-003:**
+The SOP knowledge base shall contain a minimum of 8 operational procedure documents covering common exception scenarios and operational workflows.
+
+**DR-004:**
+The ML training dataset shall use an 80/20 time-based train/test split where the available data supports a meaningful temporal split, in order to reduce the risk of data leakage.
+
+---
+
+## 10. Assumptions and Constraints
+
+### Assumptions
+
+* The synthetic dataset provides a useful demonstration of representative quick-commerce operational patterns, while not being equivalent to production data.
+* Qwen2.5:1.5B is expected to provide sufficient capability for the targeted domain-specific operational queries when supported by relevant RAG context and structured data.
+* Streamlit Community Cloud is expected to be suitable for demonstration purposes, subject to final deployment testing and platform resource limitations.
+
+### Constraints
+
+* **Development timeline:** 3 months (September–November 2026)
+* **Team:** Single developer (Shivya)
+* **Budget:** Zero; the project will prioritize free and open-source tools and services.
+* **Hardware:** Personal laptop with CPU-only inference for local GenAI development.
+
+### Risks and Mitigations
+
+* **LLM response quality:** Qwen2.5:1.5B may have limitations due to its model size. This will be mitigated through strong retrieval, constrained prompts, and evaluation.
+* **Deployment resource limits:** Streamlit Community Cloud may impose resource limitations. This will be mitigated through efficient data loading, caching, and lightweight application design.
+* **Synthetic data limitations:** Synthetic data may not represent all real-world operational edge cases. This limitation will be explicitly acknowledged in the research paper and evaluation.
+
+---
+
+## 11. Out of Scope
+
+The following capabilities are explicitly excluded from MacroOps AI v1.0:
+
+* Real-time integration with live operational systems
+* Customer-facing features of any kind
+* Payment or financial transaction processing
+* Rider navigation and route optimization
+* Voice or audio interface
+* Non-English language support
+* Hardware integrations such as scanners or printers
+* Native mobile application
+
+---
+
+
+
