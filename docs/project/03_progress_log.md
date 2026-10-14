@@ -113,3 +113,39 @@ Updated every working day.
 **Oct 1:**
 
 * [Fill in as completed]
+
+---
+
+## Month 2 — October 2026
+
+### Week 4 (Oct 5–9) — Data Foundation and Exploratory Analysis
+
+**Oct 5:**
+
+* Loaded and inspected the five synthetic operational datasets: orders, picking, delivery, inventory, and workforce
+* Confirmed 200,000 source records across the five datasets
+* Ran the data quality report; all five source tables reported zero missing values and zero duplicate rows under the implemented checks
+
+**Oct 6:**
+
+* Created the integrated master operational dataset at `data/processed/master_operational_all_tables.csv`
+* Preserved 100,000 unique orders in the master dataset, with 49 columns
+* Documented unmatched picking and delivery records resulting in missing joined features
+* Implemented and ran the operational KPI calculator
+
+**Oct 7:**
+
+* Completed EDA Notebook Part 1 (Cells 1–6)
+* Generated visualizations for order status, hourly SLA performance, store performance, picking, and delivery
+
+**Oct 8:**
+
+* Completed EDA Notebook Part 2 (Cells 7–12)
+* Analyzed inventory accuracy, store-level inventory performance, and workforce workload
+* Generated a feature correlation matrix and operational exception summary
+* Completed the EDA summary and verified that all 10 EDA figure files exist
+
+**Oct 9:**
+
+* Verified the data loading, data quality, master dataset, and KPI calculator scripts
+* [Update with final GitHub, project board, and Overleaf work after completion]
