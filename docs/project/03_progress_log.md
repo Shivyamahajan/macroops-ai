@@ -148,4 +148,9 @@ Updated every working day.
 **Oct 9:**
 
 * Verified the data loading, data quality, master dataset, and KPI calculator scripts
-* [Update with final GitHub, project board, and Overleaf work after completion]
+* Completed and saved all 10 EDA visualizations
+* Committed the EDA notebook, progress log, and analysis figures to   GitHub (commit 4546d25)
+* Pushed the changes successfully to the main branch
+* Updated the GitHub Projects board: moved B-001 to B-006 to Done and B-028, B-030, B-031, and B-034 to This Week
+
+
