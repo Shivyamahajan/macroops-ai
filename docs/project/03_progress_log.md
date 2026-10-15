@@ -104,15 +104,15 @@ Updated every working day.
 
 **Sep 30:**
 
-* Completed the Agile project management board setup in GitHub Projects
-* Configured the five-column workflow: Backlog, This Week, In Progress, In Review, and Done
-* Created and configured project-specific Epic and Priority labels
-* Added all 52 product backlog items (B-001 to B-052) to the GitHub Project board
-* Verified that all 52 backlog items are visible and currently organized in the Backlog column
+- Completed the Agile project management board setup in GitHub Projects.
+- Configured the five-column workflow: Backlog, This Week, In Progress, In Review, and Done.
+- Created and configured project-specific Epic and Priority labels.
+- Added all 52 product backlog items (B-001 to B-052) to the GitHub Project board.
+- Verified that all 52 backlog items were visible and organized in the Backlog column.
 
 **Oct 1:**
 
-* [Fill in as completed]
+- Reviewed the project backlog and prepared for the upcoming data foundation and exploratory data analysis work.
 
 ---
 
