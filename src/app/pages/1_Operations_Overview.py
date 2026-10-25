@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 
 from src.analytics.load_data import load_all
 from src.analytics.exception_engine import detect_exceptions
+from src.ai.root_cause_insights import generate_root_cause_insights
 
 st.set_page_config(
     page_title="Operations Overview | MacroOps AI",
@@ -24,12 +25,17 @@ def get_exceptions():
     # Retrieve all detected exceptions for accurate summary counts.
     return detect_exceptions(limit=100000)
 
+@st.cache_data
+def get_root_cause_insights():
+    return generate_root_cause_insights(limit=100000)
+
 data = get_operational_data()
 orders = data["orders"]
 picking = data["picking"]
 inventory = data["inventory"]
 
 exceptions = get_exceptions()
+root_cause_insights = get_root_cause_insights()
 
 total_orders = len(orders)
 delivered = orders[
@@ -105,6 +111,32 @@ else:
             x="Severity",
             y="Count",
         )
+
+st.divider()
+
+st.subheader("AI-Assisted Root-Cause Insights")
+
+if root_cause_insights.empty:
+    st.info("No root-cause insights available.")
+else:
+    st.caption(
+        "These are rule-based hypotheses to guide investigation, "
+        "not confirmed root causes."
+    )
+
+    display_columns = [
+        "exception_type",
+        "severity",
+        "entity_id",
+        "likely_cause",
+        "investigation",
+    ]
+
+    st.dataframe(
+        root_cause_insights[display_columns],
+        width="stretch",
+        hide_index=True,
+    )
 
 st.caption(
     "Data source: MacroOps AI synthetic operational datasets. "
