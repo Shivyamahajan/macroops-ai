@@ -29,9 +29,9 @@ overview_page = st.Page(
 )
 
 exceptions_page = st.Page(
-    str(APP_DIR / "pages" / "2_Exception_Management.py"),
+    str(APP_DIR / "pages" / "page_02_exceptions.py"),
     title="Exception Management",
-    icon="⚠️",
+    icon="🚨",
 )
 
 inventory_page = st.Page(
