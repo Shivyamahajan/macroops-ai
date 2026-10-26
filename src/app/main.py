@@ -1,6 +1,6 @@
-
+﻿
 """
-MacroOps AI — Main Streamlit Application
+MacroOps AI â€” Main Streamlit Application
 Author: Shivya
 Date: October 2026
 """
@@ -17,14 +17,14 @@ if str(PROJECT_ROOT) not in __import__("sys").path:
 
 st.set_page_config(
     page_title="MacroOps AI",
-    page_icon="🏠",
+    page_icon="📦",
     layout="wide",
 )
 
 overview_page = st.Page(
     str(APP_DIR / "pages" / "page_01_overview.py"),
     title="Operations Overview",
-    icon="🏠",
+    icon="📊",
     default=True,
 )
 
@@ -35,7 +35,7 @@ exceptions_page = st.Page(
 )
 
 inventory_page = st.Page(
-    str(APP_DIR / "pages" / "3_Inventory_Status.py"),
+    str(APP_DIR / "pages" / "page_03_inventory.py"),
     title="Inventory Status",
     icon="📦",
 )
@@ -49,3 +49,4 @@ navigation = st.navigation(
 )
 
 navigation.run()
+
