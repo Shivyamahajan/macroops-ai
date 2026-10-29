@@ -153,4 +153,37 @@ Updated every working day.
 * Pushed the changes successfully to the main branch
 * Updated the GitHub Projects board: moved B-001 to B-006 to Done and B-028, B-030, B-031, and B-034 to This Week
 
+### Week 5 (Oct 12–16) — Operations Dashboard Development
 
+**Oct 12:**
+
+* Reviewed the integrated operational datasets and existing KPI calculations.
+* Reviewed the Operations Overview dashboard requirements and layout.
+* Planned the presentation of key operational metrics and performance visualizations.
+
+**Oct 13:**
+
+* Developed and refined the Exception Management dashboard.
+* Integrated exception detection results into the dashboard.
+* Added exception severity summaries, filtering options, and exception details.
+* Implemented CSV export functionality for exception records.
+
+**Oct 14:**
+
+* Developed the Inventory Status dashboard.
+* Added inventory accuracy, stockout, negative variance, and high variance KPIs.
+* Added inventory analysis visualizations and store-level health information.
+* Implemented an adjustable inventory accuracy threshold.
+
+**Oct 15:**
+
+* Integrated the Operations Overview, Exception Management, and Inventory Status pages into the Streamlit application.
+* Configured sidebar navigation between the three dashboard pages.
+* Tested dashboard functionality and reviewed KPI displays, charts, filters, and tables.
+* Fixed navigation and application issues identified during testing.
+
+**Oct 16:**
+
+* Reviewed all three dashboard pages: Operations Overview, Exception Management, and Inventory Status.
+* Reviewed the Week 5 implementation and prepared documentation updates.
+* Prepared the completed dashboard work for GitHub synchronization and project board updates.
