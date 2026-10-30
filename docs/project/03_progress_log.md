@@ -187,3 +187,34 @@ Updated every working day.
 * Reviewed all three dashboard pages: Operations Overview, Exception Management, and Inventory Status.
 * Reviewed the Week 5 implementation and prepared documentation updates.
 * Prepared the completed dashboard work for GitHub synchronization and project board updates.
+
+### **Oct 19 — Day 1: Feature Engineering**
+
+* Inspected the master operational dataset containing 100,000 records and 22 columns.
+* Identified and reviewed relevant features for SLA breach prediction.
+* Implemented the feature engineering pipeline in `src/ai/feature_engineering.py`.
+* Created 11 model-ready features, including order details, SLA window, picking metrics, and delivery metrics.
+* Excluded outcome-related columns to reduce target leakage.
+* Prepared a time-based training, validation, and test split.
+* Generated an ML dataset containing 25,000 eligible orders.
+
+### **Oct 20 — Day 2: SLA Prediction Model Training**
+
+* Implemented the model training pipeline in `src/ai/train_sla_model.py`.
+* Trained and compared four models: Majority Baseline, Logistic Regression, Random Forest, and XGBoost.
+* Evaluated model performance using Accuracy, ROC-AUC, PR-AUC, Precision, Recall, and F1-score.
+* Selected Logistic Regression based on validation ROC-AUC.
+* Achieved a test ROC-AUC of 0.6197 against the PRD target of 0.80.
+* Identified class imbalance and model generalization challenges during evaluation.
+* Saved the trained model and validation-based risk cutoffs in `models/sla_model.pkl`.
+* Generated the model evaluation report and visualization.
+
+### **Oct 21 — Day 3: SHAP Explainability**
+
+* Implemented global SHAP explainability in `src/ai/shap_analysis.py`.
+* Generated SHAP feature importance bar and summary dot plots.
+* Exported mean absolute SHAP feature importance to CSV.
+* Developed `src/ai/sla_predictor.py` for individual order risk scoring and explanations.
+* Implemented Low, Medium, and High SLA risk classification using saved risk cutoffs.
+* Added individual order explanations identifying the top contributing features and suggested operational actions.
+* Successfully tested the predictor on sample test orders and verified all generated files.

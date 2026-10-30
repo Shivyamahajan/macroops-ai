@@ -1,0 +1,12 @@
+feature,mean_abs_shap
+item_count,0.16038316327043178
+picking_items_picked,0.15182747611358882
+sla_window_minutes,0.08071127240893843
+order_day,0.05001591040261556
+picking_pick_duration_minutes,0.042436807937759564
+order_hour,0.03993991044940547
+is_peak_hour,0.03689150021665905
+picking_items_missing,0.032512818103519414
+order_value,0.02537702987262568
+delivery_distance_km,0.015658490143377207
+delivery_assignment_delay_minutes,0.014282087399472584
