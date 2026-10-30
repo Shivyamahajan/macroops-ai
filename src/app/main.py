@@ -39,12 +39,18 @@ inventory_page = st.Page(
     title="Inventory Status",
     icon="📦",
 )
+sla_risk_page = st.Page(
+    str(APP_DIR / "pages" / "page_04_sla_risk.py"),
+    title="SLA Risk Monitor",
+    icon="🔮",
+)
 
 navigation = st.navigation(
     [
         overview_page,
         exceptions_page,
         inventory_page,
+        sla_risk_page,
     ]
 )
 

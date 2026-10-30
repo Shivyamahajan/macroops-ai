@@ -218,3 +218,12 @@ Updated every working day.
 * Implemented Low, Medium, and High SLA risk classification using saved risk cutoffs.
 * Added individual order explanations identifying the top contributing features and suggested operational actions.
 * Successfully tested the predictor on sample test orders and verified all generated files.
+
+### **Oct 22 — Day 4: SLA Risk Monitor**
+
+* Created and integrated the SLA Risk Monitor Streamlit page.
+* Scored 5,000 historical test orders using Logistic Regression.
+* Added risk summaries, interactive charts, and high-risk order filtering.
+* Integrated SHAP-based explanations and suggested operational actions.
+* Displayed historical SLA outcomes and clarified that predictions are not live.
+* Successfully tested all four dashboard pages and captured screenshots.
