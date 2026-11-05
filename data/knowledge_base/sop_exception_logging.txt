@@ -1,0 +1,28 @@
+**SOP-EXC-007: Exception Logging and Tracking**
+
+**Purpose:** Establish a consistent process for recording, tracking, and resolving operational exceptions.
+
+**Exception Statuses**
+- Open: Exception has been identified but no action has started.
+- In Progress: A team member is actively investigating or resolving it.
+- Resolved: Corrective action has been completed.
+- Escalated: The issue requires attention from a higher authority.
+
+**Procedure**
+1. Record every operational exception in the system.
+2. Include the exception type, severity, affected order or SKU, store, date, and time.
+3. Assign the exception to the responsible team member.
+4. Update its status as work progresses.
+5. Add a resolution note describing the root cause and corrective action.
+6. Verify the issue is resolved before closing the exception.
+
+**Response Time Targets**
+- High severity: Initial action within 15 minutes.
+- Medium severity: Initial action within 60 minutes.
+- Low severity: Handle according to the assigned operational priority.
+
+**Escalation**
+- Escalate any exception that exceeds its response-time target without action.
+- Record the escalation reason and the person or team notified.
+
+**Expected Outcome:** Consistent exception tracking, clear accountability, and faster issue resolution.

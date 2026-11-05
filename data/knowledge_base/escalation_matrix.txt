@@ -1,0 +1,50 @@
+**MacroOps AI: Operational Escalation Matrix**
+
+**Purpose:** Define escalation levels, responsible roles, and reporting procedures for operational issues.
+
+**Escalation Levels**
+
+**Level 1 – Shift Supervisor**
+- Handles routine operational issues.
+- Coordinates immediate corrective actions.
+- Monitors picking delays and missing items.
+
+**Level 2 – Store Manager**
+- Handles unresolved store-level issues.
+- Reviews major inventory discrepancies.
+- Manages workforce overload when task reassignment is insufficient.
+
+**Level 3 – Operations Manager**
+- Handles multiple simultaneous SLA risks.
+- Reviews recurring operational exceptions.
+- Coordinates corrective actions across store teams.
+
+**Level 4 – Regional Manager**
+- Handles serious or recurring issues across stores.
+- Reviews store-level SLA breach rates exceeding 15% over one hour.
+- Addresses persistent rider shortages and operational capacity problems.
+
+**Issue-Specific Escalation**
+
+1. Rider Shortage:
+   - Delivery Operations Team → Operations Manager → Regional Manager.
+
+2. Inventory Discrepancy Greater Than 10 Units:
+   - Shift Supervisor → Store Manager → Inventory Controller.
+
+3. Customer Complaint About Late Delivery:
+   - Customer Support → Shift Supervisor → Operations Manager, depending on severity.
+
+4. Workforce Overload:
+   - Shift Supervisor → Store Manager → Operations Manager, if unresolved.
+
+**Escalation Requirements**
+Every escalation must include:
+- Issue type and severity.
+- Affected order, SKU, or store.
+- Date and time identified.
+- Actions already taken.
+- Reason for escalation.
+- Responsible person or team.
+
+**Expected Outcome:** Clear accountability, faster decision-making, and consistent handling of operational issues.

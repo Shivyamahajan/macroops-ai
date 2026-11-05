@@ -1,0 +1,41 @@
+**MacroOps AI: Operational KPI Definitions**
+
+**Purpose:** Define the key performance indicators used to monitor quick-commerce operations.
+
+**1. SLA Breach Rate**
+- Definition: Percentage of orders delivered after their promised SLA deadline.
+- Target: Below 5%.
+
+**2. On-Time Delivery Rate**
+- Definition: Percentage of orders delivered within the promised SLA.
+- Target: Above 95%.
+
+**3. Average Picking Duration**
+- Definition: Average time taken by staff to pick and prepare an order.
+- Target: Below 10 minutes.
+
+**4. Slow Picking Rate**
+- Definition: Percentage of orders with a picking duration exceeding 20 minutes.
+- Target: Minimize slow-picking incidents.
+
+**5. Missing Item Rate**
+- Definition: Percentage of orders containing one or more unavailable items.
+- Target: Below 3%.
+
+**6. Average Rider Assignment Delay**
+- Definition: Average time between an order becoming ready for dispatch and a rider being assigned.
+- Target: Below 5 minutes.
+
+**7. Inventory Accuracy**
+- Definition: Percentage of inventory records that accurately match physical stock.
+- Target: Above 95%.
+
+**8. Stockout Count**
+- Definition: Number of products with zero available physical stock.
+- Target: Zero stockouts.
+
+**9. Workforce Overload**
+- Definition: Number of employees with more than 10 pending tasks.
+- Target: Minimize overloaded employees.
+
+**Note:** These are proposed operational targets for the MacroOps AI demonstration platform, not verified industry benchmarks.

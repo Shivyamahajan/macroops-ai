@@ -1,0 +1,21 @@
+**SOP-DEL-006: Rider Delay and Shortage Management**
+
+**Purpose:** Define the procedure for handling delays caused by unavailable delivery riders.
+
+**Risk Identification**
+- A rider assignment delay exceeding 15 minutes triggers an exception.
+
+**Procedure**
+1. The Delivery Operations team checks the availability of delivery riders.
+2. Identify idle riders in nearby locations and request an assignment.
+3. If no rider is available within 5 minutes, manually assign an available rider where possible.
+4. Review rider availability before peak periods:
+   - Lunch peak: 12:00 PM–2:00 PM.
+   - Evening peak: 6:00 PM–10:00 PM.
+5. Record the assignment delay and corrective action.
+
+**Escalation**
+- If the average rider assignment delay exceeds 12 minutes for one hour, escalate the issue to the Regional Manager.
+- Repeated rider shortages should be reviewed for staffing and capacity planning.
+
+**Expected Outcome:** Faster rider assignment, improved delivery coordination, and reduced order delays.

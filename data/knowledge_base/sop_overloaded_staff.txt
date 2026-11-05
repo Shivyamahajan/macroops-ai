@@ -1,0 +1,20 @@
+**SOP-WFM-008: Overloaded Staff Management**
+
+**Purpose:** Define how to identify and manage excessive workloads among store employees.
+
+**Risk Identification**
+- More than 10 pending tasks assigned to one employee triggers an overload exception.
+- A store is considered overloaded when the average pending task count exceeds 8 per employee.
+
+**Procedure**
+1. Monitor pending tasks assigned to each employee.
+2. When an employee has more than 10 pending tasks, raise an overload exception.
+3. Review task distribution across the store.
+4. Reassign pending tasks to available employees with fewer than 5 pending tasks.
+5. Record the reassignment and update the task ownership in the system.
+
+**Escalation**
+- If all employees are overloaded, notify the Store Manager for further action.
+- Repeated workload imbalances should be reviewed to improve staffing and task distribution.
+
+**Expected Outcome:** Balanced workloads, improved operational efficiency, and reduced fulfilment delays.

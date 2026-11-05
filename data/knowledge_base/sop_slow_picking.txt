@@ -1,0 +1,20 @@
+**SOP-PCK-005: Slow Picking Management**
+
+**Purpose:** Define the procedure for identifying and resolving delays during order picking.
+
+**Risk Identification**
+- A picking duration exceeding 20 minutes is classified as slow picking.
+- The system should raise an exception when this threshold is crossed.
+
+**Procedure**
+1. The Fulfillment Manager reviews the delayed order and contacts the assigned picker.
+2. Check whether missing items are causing the delay. If so, follow SOP-INV-002.
+3. If necessary, assign a second picker to help complete the order.
+4. Record the reason for the delay and the corrective action taken.
+
+**Escalation**
+- If picking exceeds 25 minutes, notify the Operations Manager.
+- If three or more slow-picking incidents occur, review the underlying causes with the Fulfillment Manager.
+- Repeated incidents should be reviewed constructively to identify process or staffing improvements.
+
+**Expected Outcome:** Faster order picking, fewer fulfilment delays, and improved SLA performance.

@@ -1,0 +1,17 @@
+**SOP-INV-002: Missing Items Handling**
+
+**Purpose:** Define the procedure for handling items that are listed in an order but cannot be found during picking.
+
+**Procedure**
+1. Check the assigned shelf and adjacent shelves for the missing item.
+2. Inform the Shift Supervisor if the item cannot be located.
+3. If the item is still not found within 3 minutes, mark it as missing in the system.
+4. Offer a substitute only if substitution is permitted by the customer and platform policy.
+5. If no approved substitute is available, remove the item from the order and update the order record.
+6. Record the missing SKU, quantity, reason, and action taken.
+
+**Escalation**
+- If two or more items are missing from the same order, notify the Shift Supervisor before packing.
+- Repeated missing-item incidents involving the same SKU should be reported to the Inventory Controller.
+
+**Expected Outcome:** Accurate order fulfilment, fewer packing errors, and timely communication about unavailable products.

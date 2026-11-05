@@ -1,0 +1,21 @@
+**SOP-INV-001: Inventory Discrepancy Handling**
+
+**Purpose:** Define the procedure for handling differences between system inventory and physical stock.
+
+**Severity Classification**
+- Minor discrepancy: 1–10 units.
+- Major discrepancy: More than 10 units.
+
+**Procedure**
+1. Record all inventory discrepancies in the system.
+2. For a major discrepancy, immediately stop picking for the affected SKU and place it on hold.
+3. Notify the Shift Supervisor.
+4. Conduct a physical recount within 15 minutes.
+5. The Inventory Controller must verify and update the system stock after confirmation.
+6. Record the discrepancy, recount result, corrective action, and responsible person.
+
+**Escalation**
+- If the negative stock variance exceeds 10 units, escalate to the Store Manager within 30 minutes.
+- Do not resume picking until the stock discrepancy has been reviewed and the SKU is cleared.
+
+**Expected Outcome:** Accurate inventory records and prevention of incorrect order fulfilment.

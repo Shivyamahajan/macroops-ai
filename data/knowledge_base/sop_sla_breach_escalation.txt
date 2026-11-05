@@ -1,0 +1,21 @@
+**SOP-SLA-004: SLA Breach Escalation**
+
+**Purpose:** Define how operations teams identify, monitor, and escalate orders at risk of missing their delivery SLA.
+
+**Risk Identification**
+- High risk: Fewer than 10 minutes remain before the delivery SLA deadline.
+- An order should be reviewed immediately when it is identified as high risk.
+
+**Procedure**
+1. The Operations Manager checks the order's current picking and delivery assignment status.
+2. Identify the likely cause of delay, such as slow picking, missing items, or rider unavailability.
+3. Notify Customer Support when customer communication may be required.
+4. For an individual at-risk order, notify the Shift Supervisor and coordinate corrective action.
+5. Record the reason for the delay and the action taken.
+
+**Escalation**
+- If more than five orders at the same store are simultaneously at high risk, notify the Operations Manager.
+- If a store's SLA breach rate exceeds 15% over one hour, escalate the issue to the Regional Manager.
+- All escalations must include the affected order count, store, suspected cause, and action taken.
+
+**Expected Outcome:** Earlier intervention, better coordination, and reduced delivery delays.

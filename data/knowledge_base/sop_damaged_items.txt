@@ -1,0 +1,23 @@
+**SOP-QC-003: Damaged Items Handling**
+
+**Purpose:** Establish procedures for identifying and handling damaged, defective, or expired products during order fulfilment.
+
+**Examples of Damaged Items**
+- Broken or tampered packaging seals.
+- Leaking or spilled products.
+- Dented or physically damaged packaging.
+- Expired or visibly spoiled products.
+
+**Procedure**
+1. Inspect the product and identify the type of damage.
+2. Never pack food or other products with compromised packaging, leakage, or signs of spoilage.
+3. Mark the affected item as damaged in the inventory system.
+4. Remove the damaged item from available picking stock and place it in the designated damaged-goods area.
+5. Record the SKU, quantity, damage type, and date/time.
+6. Arrange a replacement if available; otherwise, mark the item as unavailable or missing in the order.
+
+**Escalation**
+- If three or more units of the same SKU are damaged, report the issue to the Store Manager.
+- Repeated damage involving the same product should be reviewed by the Inventory Controller.
+
+**Expected Outcome:** Prevent damaged products from reaching customers and maintain accurate inventory records.

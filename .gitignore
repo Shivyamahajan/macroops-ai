@@ -6,3 +6,5 @@ __pycache__/
 *.keras
 .DS_Store
 data/processed/
+
+data/vector_db/
