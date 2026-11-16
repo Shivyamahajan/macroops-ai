@@ -44,6 +44,17 @@ sla_risk_page = st.Page(
     title="SLA Risk Monitor",
     icon="🔮",
 )
+copilot_page = st.Page(
+    str(APP_DIR / "pages" / "page_05_copilot.py"),
+    title="AI Copilot",
+    icon="🤖",
+)
+
+sop_page = st.Page(
+    str(APP_DIR / "pages" / "page_06_sop.py"),
+    title="SOP Assistant",
+    icon="📚",
+)
 
 navigation = st.navigation(
     [
@@ -51,6 +62,8 @@ navigation = st.navigation(
         exceptions_page,
         inventory_page,
         sla_risk_page,
+        copilot_page,
+        sop_page,
     ]
 )
 
