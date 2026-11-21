@@ -1,0 +1,399 @@
+id,type,question,expected_source,answer,table,mode,sources,retrieval_hit,latency_s,correct,grounded,hallucinated
+S01,sop,How should staff investigate an inventory mismatch greater than 10 units?,sop_inventory_discrepancy.txt,"**Inventory Discrepancy Handling Procedure**
+
+1. Record all inventory discrepancies in the system.
+2. For a major discrepancy (inventory mismatch greater than 10 units), immediately stop picking for the affected SKU and place it on hold.
+3. Notify the Shift Supervisor.
+4. Conduct a physical recount within 15 minutes.
+5. The Inventory Controller must verify and update the system stock after confirmation.
+6. Record the discrepancy, recount result, corrective action, and responsible person.
+
+**Escalation**
+- If the negative stock variance exceeds 10 units, escalate to the Store Manager within 30 minutes.
+- Do not resume picking until the stock discrepancy has been reviewed and the SKU is cleared.
+
+**Expected Outcome:** Accurate inventory records and prevention of incorrect order fulfilment.",,generated,escalation_matrix.txt;sop_damaged_items.txt;sop_inventory_discrepancy.txt,1.0,29.45,1.0,1.0,0.0
+S02,sop,A product has a broken seal after picking. What action is required?,sop_damaged_items.txt,"**Action Required:**
+1. Inspect the product and identify the type of damage.
+2. Mark the affected item as damaged in the inventory system.
+3. Remove the damaged item from available picking stock and place it in the designated damaged-goods area.
+4. Record the SKU, quantity, damage type, and date/time.
+5. Arrange a replacement if available; otherwise, mark the item as unavailable or missing in the order.",,generated,sop_damaged_items.txt,1.0,12.93,1.0,1.0,0.0
+S03,sop,What should a picker do when an ordered product cannot be located?,sop_missing_items.txt,"**SOP-INV-002: Missing Items Handling**
+
+1. Check the assigned shelf and adjacent shelves for the missing item.
+2. Inform the Shift Supervisor if the item cannot be located.
+3. If the item is still not found within 3 minutes, mark it as missing in the system.
+4. Offer a substitute only if substitution is permitted by the customer and platform policy.
+5. If no approved substitute is available, remove the item from the order and update the order record.
+6. Record the missing SKU, quantity, reason, and action taken.",,generated,sop_damaged_items.txt;sop_missing_items.txt;sop_slow_picking.txt,1.0,21.17,1.0,1.0,0.0
+S04,sop,At what point must slow picking be escalated to the Operations Manager?,sop_slow_picking.txt,"**Escalation Condition:** If picking exceeds 25 minutes, notify the Operations Manager.",,generated,kpi_definitions.txt;sop_slow_picking.txt,1.0,8.01,1.0,1.0,0.0
+S05,sop,What is the escalation process when an order waits too long for rider assignment?,sop_rider_delay_shortage.txt,"**SOP-DEL-006: Rider Delay and Shortage Management**
+
+**Purpose:** Define the procedure for handling delays caused by unavailable delivery riders.
+
+**Risk Identification**
+- A rider assignment delay exceeding 15 minutes triggers an exception.
+
+**Procedure**
+1. The Delivery Operations team checks the availability of delivery riders.
+2. Identify idle riders in nearby locations and request an assignment.
+3. If no rider is available within 5 minutes, manually assign an available rider where possible.
+4. Review rider availability before peak periods:
+   - Lunch peak: 12:00 PM–2:00 PM.
+   - Evening peak: 6:00 PM–10:00 PM.
+5. Record the assignment delay and corrective action.
+
+**Escalation**
+- If the average rider assignment delay exceeds 12 minutes for one hour, escalate the issue to the Regional Manager.
+- Repeated rider shortages should be reviewed for staffing and capacity planning.
+
+**Expected Outcome:** Faster rider assignment, improved delivery coordination, and reduced order delays.
+
+**Relevant Escalation Path**
+Delivery Operations Team → Operations Manager → Regional Manager.
+
+**Escalation requirements:** Every escalation must include the issue type and severity, affected order, SKU, or store, date and time identified, actions already taken, reason for escalation, and responsible person or team.",,rule_based,escalation_matrix.txt;sop_rider_delay_shortage.txt,1.0,0.12,1.0,1.0,0.0
+S06,sop,How do staff document an exception after resolving it?,sop_exception_logging.txt,"**SOP-EXC-007: Exception Logging and Tracking**
+
+**Procedure**
+1. Record the resolution note describing the root cause and corrective action.
+2. Verify that the issue is resolved before closing the exception.
+3. Update the exception's status as work progresses.
+4. Ensure the exception is closed with a resolved status.
+5. Verify that the exception is closed with a resolved status before logging the exception.
+
+**Response Time Targets**
+- High severity: Initial action within 15 minutes.
+- Medium severity: Initial action within 60 minutes.
+- Low severity: Handle according to the assigned operational priority.
+
+**Escalation**
+- Escalate any exception that exceeds its response-time target without action.
+- Record the escalation reason and the person or team notified.
+
+**Expected Outcome:** Consistent exception tracking, clear accountability, and faster issue resolution.",,generated,sop_exception_logging.txt,1.0,17.01,0.0,0.0,1.0
+S07,sop,What action should a supervisor take when a worker has too many pending tasks?,sop_overloaded_staff.txt,"When a worker has too many pending tasks, the supervisor should raise an overload exception. The supervisor should review task distribution across the store and reassign pending tasks to available employees with fewer than 5 pending tasks. The supervisor should record the reassignment and update the task ownership in the system.",,generated,sop_overloaded_staff.txt;sop_slow_picking.txt,1.0,9.97,1.0,1.0,0.0
+S08,sop,Which authority handles a store experiencing repeated SLA breaches?,escalation_matrix.txt,The Operations Manager handles a store experiencing repeated SLA breaches.,,generated,sop_damaged_items.txt;sop_sla_breach_escalation.txt;sop_slow_picking.txt,0.0,5.15,0.0,0.0,1.0
+S09,sop,What is the refund policy for deliveries to Mars?,NONE,No matching procedure found in the SOPs.,,no_match,,1.0,0.1,1.0,1.0,0.0
+S10,sop,How should a damaged product be removed from picking stock?,sop_damaged_items.txt,"Remove the damaged item from the picking stock and place it in the designated damaged-goods area.
+
+**Important Safety Rule:** Never pack food or other products with compromised packaging, leakage, or signs of spoilage.",,generated,sop_damaged_items.txt,1.0,1.79,1.0,1.0,0.0
+S11,sop,What details must be recorded when an inventory discrepancy is discovered?,sop_inventory_discrepancy.txt,"When an inventory discrepancy is discovered, the following details must be recorded:
+
+1. Record all inventory discrepancies in the system.
+2. For a major discrepancy, immediately stop picking for the affected SKU and place it on hold.
+3. Notify the Shift Supervisor.
+4. Conduct a physical recount within 15 minutes.
+5. The Inventory Controller must verify and update the system stock after confirmation.
+6. Record the discrepancy, recount result, corrective action, and responsible person.",,generated,sop_damaged_items.txt;sop_inventory_discrepancy.txt,1.0,11.86,1.0,1.0,0.0
+S12,sop,What should happen when an item is missing during order fulfilment?,sop_missing_items.txt,"**SOP-INV-002: Missing Items Handling**
+
+1. Check the assigned shelf and adjacent shelves for the missing item.
+2. Inform the Shift Supervisor if the item cannot be located.
+3. If the item is still not found within 3 minutes, mark it as missing in the system.
+4. Offer a substitute only if substitution is permitted by the customer and platform policy.
+5. If no approved substitute is available, remove the item from the order and update the order record.
+6. Record the missing SKU, quantity, reason, and action taken.
+
+**Escalation**
+- If two or more items are missing from the same order, notify the Shift Supervisor before packing.
+- Repeated missing-item incidents involving the same SKU should be reported to the Inventory Controller.",,generated,sop_damaged_items.txt;sop_missing_items.txt,1.0,14.81,1.0,1.0,0.0
+S13,sop,When should a slow picking issue be reported to management?,sop_slow_picking.txt,A slow picking issue should be reported to the Operations Manager when the picking duration exceeds 25 minutes.,,generated,kpi_definitions.txt;sop_slow_picking.txt,1.0,2.2,1.0,1.0,0.0
+S14,sop,How should the store respond when no delivery rider is available?,sop_rider_delay_shortage.txt,"**SOP-DEL-006: Rider Delay and Shortage Management**
+
+**Purpose:** Define the procedure for handling delays caused by unavailable delivery riders.
+
+**Risk Identification**
+- A rider assignment delay exceeding 15 minutes triggers an exception.
+
+**Procedure**
+1. The Delivery Operations team checks the availability of delivery riders.
+2. Identify idle riders in nearby locations and request an assignment.
+3. If no rider is available within 5 minutes, manually assign an available rider where possible.
+4. Review rider availability before peak periods:
+   - Lunch peak: 12:00 PM–2:00 PM.
+   - Evening peak: 6:00 PM–10:00 PM.
+5. Record the assignment delay and corrective action.
+
+**Escalation**
+- If the average rider assignment delay exceeds 12 minutes for one hour, escalate the issue to the Regional Manager.
+- Repeated rider shortages should be reviewed for staffing and capacity planning.
+
+**Expected Outcome:** Faster rider assignment, improved delivery coordination, and reduced order delays.",,rule_based,sop_rider_delay_shortage.txt,1.0,0.04,1.0,1.0,0.0
+S15,sop,What information belongs in an exception log?,sop_exception_logging.txt,"The information that should be included in an exception log is:
+
+- Exception type
+- Severity
+- Affected order or SKU
+- Store
+- Date and time of the exception
+- Responsible team member assigned
+- Status of the exception (Open, In Progress, Resolved, Escalated)
+- Resolution note describing the root cause and corrective action
+- Verification of the issue being resolved before closing the exception",,generated,sop_exception_logging.txt,1.0,8.93,1.0,1.0,0.0
+S16,sop,How can supervisors redistribute work when staff become overloaded?,sop_overloaded_staff.txt,"**Procedure:**
+1. Monitor pending tasks assigned to each employee.
+2. When an employee has more than 10 pending tasks, raise an overload exception.
+3. Review task distribution across the store.
+4. Reassign pending tasks to available employees with fewer than 5 pending tasks.
+5. Record the reassignment and update the task ownership in the system.
+
+**Escalation:**
+- If all employees are overloaded, notify the Store Manager for further action.
+- Repeated workload imbalances should be reviewed to improve staffing and task distribution.",,generated,escalation_matrix.txt;sop_overloaded_staff.txt,1.0,12.76,1.0,1.0,0.0
+S17,sop,Who should receive an escalation for a serious operational SLA issue?,escalation_matrix.txt,"For a serious operational SLA issue, the escalation should be directed to the Regional Manager.",,generated,escalation_matrix.txt;sop_sla_breach_escalation.txt;sop_slow_picking.txt,1.0,10.08,1.0,1.0,0.0
+S18,sop,What is the correct process for identifying and recording damaged goods?,sop_damaged_items.txt,"**Procedure:**
+1. Inspect the product and identify the type of damage.
+2. Never pack food or other products with compromised packaging, leakage, or signs of spoilage.
+3. Mark the affected item as damaged in the inventory system.
+4. Remove the damaged item from available picking stock and place it in the designated damaged-goods area.
+5. Record the SKU, quantity, damage type, and date/time.
+6. Arrange a replacement if available; otherwise, mark the item as unavailable or missing in the order.
+
+**Escalation:**
+- If three or more units of the same SKU are damaged, report the issue to the Store Manager.
+- Repeated damage involving the same product should be reviewed by the Inventory Controller.",,generated,sop_damaged_items.txt,1.0,13.73,1.0,1.0,0.0
+S19,sop,How should staff handle a stock count that does not match system inventory?,sop_inventory_discrepancy.txt,"**SOP-INV-001: Inventory Discrepancy Handling**
+
+**Procedure**
+1. Record all inventory discrepancies in the system.
+2. For a major discrepancy (more than 10 units), immediately stop picking for the affected SKU and place it on hold.
+3. Notify the Shift Supervisor.
+4. Conduct a physical recount within 15 minutes.
+5. The Inventory Controller must verify and update the system stock after confirmation.
+6. Record the discrepancy, recount result, corrective action, and responsible person.
+
+**Escalation**
+- If the negative stock variance exceeds 10 units, escalate to the Store Manager within 30 minutes.
+- Do not resume picking until the stock discrepancy has been reviewed and the SKU is cleared.
+
+**Expected Outcome:** Accurate inventory records and prevention of incorrect order fulfilment.",,generated,kpi_definitions.txt;sop_inventory_discrepancy.txt,1.0,17.38,1.0,1.0,0.0
+S20,sop,What steps are required before marking an unavailable item as missing?,sop_missing_items.txt,"Before marking an unavailable item as missing, the following steps should be taken:
+
+1. Check the assigned shelf and adjacent shelves for the missing item.
+2. Inform the Shift Supervisor if the item cannot be located.",,generated,sop_damaged_items.txt;sop_missing_items.txt,1.0,4.66,0.0,1.0,0.0
+S21,sop,What should the team do if picking regularly exceeds its expected time?,sop_slow_picking.txt,"If picking regularly exceeds its expected time, the team should:
+
+1. Review the underlying causes of the delays.
+2. Implement process improvements or staffing adjustments as necessary.
+3. Document the reasons for the delays and the corrective actions taken.
+4. Escalate the issue to the Operations Manager if three or more slow-picking incidents occur.
+5. Continuously monitor and improve the picking process to ensure timely order fulfillment.",,generated,sop_slow_picking.txt,1.0,7.2,1.0,1.0,0.0
+S22,sop,How should an order be handled when rider assignment is delayed?,sop_rider_delay_shortage.txt,"**SOP-DEL-006: Rider Delay and Shortage Management**
+
+**Purpose:** Define the procedure for handling delays caused by unavailable delivery riders.
+
+**Risk Identification**
+- A rider assignment delay exceeding 15 minutes triggers an exception.
+
+**Procedure**
+1. The Delivery Operations team checks the availability of delivery riders.
+2. Identify idle riders in nearby locations and request an assignment.
+3. If no rider is available within 5 minutes, manually assign an available rider where possible.
+4. Review rider availability before peak periods:
+   - Lunch peak: 12:00 PM–2:00 PM.
+   - Evening peak: 6:00 PM–10:00 PM.
+5. Record the assignment delay and corrective action.
+
+**Escalation**
+- If the average rider assignment delay exceeds 12 minutes for one hour, escalate the issue to the Regional Manager.
+- Repeated rider shortages should be reviewed for staffing and capacity planning.
+
+**Expected Outcome:** Faster rider assignment, improved delivery coordination, and reduced order delays.",,rule_based,sop_rider_delay_shortage.txt,1.0,0.06,1.0,1.0,0.0
+S23,sop,What happens after an operational exception has been closed?,sop_exception_logging.txt,"After an operational exception has been closed, the responsible team member should verify that the issue is resolved and that the corrective action has been completed. The exception should then be marked as resolved, and the resolution note should describe the root cause and the corrective action taken. The system should be updated to reflect the resolution, and the exception should be logged as closed.",,generated,sop_exception_logging.txt,1.0,9.94,1.0,1.0,0.0
+S24,sop,What warning signs indicate that an employee needs workload support?,sop_overloaded_staff.txt,More than 10 pending tasks assigned to one employee triggers an overload exception.,,generated,escalation_matrix.txt;sop_overloaded_staff.txt,1.0,2.23,1.0,1.0,0.0
+S25,sop,How are responsibilities assigned across different escalation levels?,escalation_matrix.txt,"Responsibilities are assigned across different escalation levels as follows:
+
+- **Level 1 – Shift Supervisor**: Handles routine operational issues and coordinates immediate corrective actions.
+- **Level 2 – Store Manager**: Reviews major inventory discrepancies and manages workforce overload when task reassignment is insufficient.
+- **Level 3 – Operations Manager**: Handles multiple simultaneous SLA risks and reviews recurring operational exceptions.
+- **Level 4 – Regional Manager**: Addresses persistent rider shortages and operational capacity problems, reviews store-level SLA breach rates exceeding 15% over one hour, and addresses persistent rider shortages and operational capacity problems.",,generated,escalation_matrix.txt;sop_exception_logging.txt;sop_slow_picking.txt,1.0,15.1,1.0,1.0,0.0
+S26,sop,Which procedure explains the classification of rainfall in millimetres?,NONE,No matching procedure found in the SOPs.,,no_match,,1.0,0.16,1.0,1.0,0.0
+S27,sop,What is the process for replacing a damaged item when replacement stock is available?,sop_damaged_items.txt,"**Procedure:**
+1. Identify the damaged item in the inventory system.
+2. Remove the damaged item from available picking stock.
+3. Place the damaged item in the designated damaged-goods area.
+4. Record the SKU, quantity, damage type, and date/time.
+5. Arrange a replacement if available; otherwise, mark the item as unavailable or missing in the order.
+
+**Escalation:**
+- If three or more units of the same SKU are damaged, report the issue to the Store Manager.
+- Repeated damage involving the same product should be reviewed by the Inventory Controller.
+
+**Important Safety Rule:** Never pack food or other products with compromised packaging, leakage, or signs of spoilage.",,generated,sop_damaged_items.txt,1.0,11.06,1.0,1.0,0.0
+S28,sop,How should repeated inventory mismatches be reported and investigated?,sop_inventory_discrepancy.txt,"**SOP-INV-001: Inventory Discrepancy Handling**
+
+**Procedure**
+1. Record all inventory discrepancies in the system.
+2. For a major discrepancy, immediately stop picking for the affected SKU and place it on hold.
+3. Notify the Shift Supervisor.
+4. Conduct a physical recount within 15 minutes.
+5. The Inventory Controller must verify and update the system stock after confirmation.
+6. Record the discrepancy, recount result, corrective action, and responsible person.
+
+**Escalation**
+- If the negative stock variance exceeds 10 units, escalate to the Store Manager within 30 minutes.
+- Do not resume picking until the stock discrepancy has been reviewed and the SKU is cleared.
+
+**Expected Outcome:** Accurate inventory records and prevention of incorrect order fulfilment.
+
+**Escalation**
+- If three or more units of the same SKU are damaged, report the issue to the Store Manager.
+- Repeated damage involving the same product should be reviewed by the Inventory Controller.
+
+**Expected Outcome:** Prevent damaged products from reaching customers and maintain accurate inventory records.",,generated,sop_damaged_items.txt;sop_inventory_discrepancy.txt;sop_slow_picking.txt,1.0,19.49,0.0,1.0,0.0
+S29,sop,What should staff do when a delivery order cannot be assigned to a rider?,sop_rider_delay_shortage.txt,"**SOP-DEL-006: Rider Delay and Shortage Management**
+
+**Purpose:** Define the procedure for handling delays caused by unavailable delivery riders.
+
+**Risk Identification**
+- A rider assignment delay exceeding 15 minutes triggers an exception.
+
+**Procedure**
+1. The Delivery Operations team checks the availability of delivery riders.
+2. Identify idle riders in nearby locations and request an assignment.
+3. If no rider is available within 5 minutes, manually assign an available rider where possible.
+4. Review rider availability before peak periods:
+   - Lunch peak: 12:00 PM–2:00 PM.
+   - Evening peak: 6:00 PM–10:00 PM.
+5. Record the assignment delay and corrective action.
+
+**Escalation**
+- If the average rider assignment delay exceeds 12 minutes for one hour, escalate the issue to the Regional Manager.
+- Repeated rider shortages should be reviewed for staffing and capacity planning.
+
+**Expected Outcome:** Faster rider assignment, improved delivery coordination, and reduced order delays.
+
+**Relevant Escalation Path**
+Delivery Operations Team → Operations Manager → Regional Manager.
+
+**Escalation requirements:** Every escalation must include the issue type and severity, affected order, SKU, or store, date and time identified, actions already taken, reason for escalation, and responsible person or team.",,rule_based,escalation_matrix.txt;sop_rider_delay_shortage.txt,1.0,0.11,1.0,1.0,0.0
+S30,sop,Can the SOP assistant provide the exact current weather in London?,NONE,No matching procedure found in the SOPs.,,no_match,,1.0,0.05,1.0,1.0,0.0
+D01,data,What percentage of all orders experienced an SLA breach?,NONE,"SLA breach rate across all stores: 89.7% (89,674 of 100,000 orders).",,data,orders.csv (sla_breached),,1.57,1.0,1.0,0.0
+D02,data,Rank the five stores with the highest SLA breach rates.,NONE,The 5 stores with the highest SLA breach rate are shown below. Worst: ST012 at 92.9%.,"store_id,orders,breach_rate
+ST012,985,92.9
+ST080,977,92.6
+ST042,972,92.4
+ST024,989,92.4
+ST045,989,92.2
+",data,orders.csv (sla_breached by store),,0.24,1.0,1.0,0.0
+D03,data,List the five pickers with the longest average picking times.,NONE,The 5 slowest pickers by average pick time (minimum 10 orders) are shown below.,"picker_id,orders,avg_pick_min
+PICK01192,10,16.8
+PICK00505,13,16.0
+PICK00208,20,16.0
+PICK00887,13,15.9
+PICK00583,22,15.8
+",data,picking.csv (pick_duration_minutes),,0.09,1.0,1.0,0.0
+D04,data,How many minutes does picking take on average?,NONE,"Average pick duration: 13.0 minutes; 6.2% of picks exceed 20 minutes (25,000 picks).",,data,picking.csv (pick_duration_minutes),,0.0,1.0,1.0,0.0
+D05,data,Calculate the mean delay between order readiness and rider assignment.,NONE,"Average rider assignment delay: 8.2 minutes; 2.3% of deliveries waited over 15 minutes (25,000 deliveries).",,data,delivery.csv (assignment_delay_minutes),,0.01,1.0,1.0,0.0
+D06,data,Show the products or SKUs that currently have stockouts.,NONE,3 SKU-store combination(s) are completely out of stock.,"store_id,sku_id,system_stock,physical_stock
+ST082,SKU0085,17,0
+ST095,SKU0223,18,0
+ST068,SKU0073,17,0
+",data,inventory.csv (stockout),,0.04,1.0,1.0,0.0
+D07,data,Identify the five stores with the poorest inventory accuracy.,NONE,The 5 stores with the lowest average inventory accuracy are shown below. Lowest: ST068 at 87.8%.,"store_id,avg_accuracy_pct
+ST068,87.8
+ST051,87.9
+ST041,87.9
+ST042,88.0
+ST066,88.1
+",data,inventory.csv (inventory_accuracy_pct),,0.02,1.0,1.0,0.0
+D08,data,Give me the total number of detected operational exceptions.,NONE,"16,424 exceptions detected (14,473 high/critical, 1,951 medium severity). Most common categories: Inventory Discrepancy: 10,971, Missing Items: 2,920, Slow Pick: 1,547.","type,count
+Inventory Discrepancy,10971
+Missing Items,2920
+Slow Pick,1547
+High Assignment Delay,579
+Overloaded Employee,404
+Stockout,3
+",data,exception_engine (rule-based),,3.69,1.0,1.0,0.0
+D09,data,How many orders breached the SLA at ST044?,NONE,"SLA breach rate for ST044: 89.2% (898 of 1,007 orders).",,data,orders.csv (sla_breached),,0.04,1.0,1.0,0.0
+D10,data,Which orders have the highest predicted risk of an SLA breach?,NONE,Top 5 orders by predicted breach risk (historical test-period orders scored in demonstration mode).,"order_id,store_id,risk_probability,risk_tier
+ORD-069643,ST080,0.916,High
+ORD-014851,ST089,0.885,High
+ORD-087243,ST002,0.884,High
+ORD-055606,ST018,0.875,High
+ORD-039348,ST009,0.873,High
+",data,sla_model.pkl,,11.94,1.0,1.0,0.0
+D11,data,What are the most common operational exception categories?,NONE,"16,424 exceptions detected (14,473 high/critical, 1,951 medium severity). Most common categories: Inventory Discrepancy: 10,971, Missing Items: 2,920, Slow Pick: 1,547.","type,count
+Inventory Discrepancy,10971
+Missing Items,2920
+Slow Pick,1547
+High Assignment Delay,579
+Overloaded Employee,404
+Stockout,3
+",data,exception_engine (rule-based),,1.99,1.0,1.0,0.0
+D12,data,Show the three stores performing worst on SLA compliance.,NONE,The 3 stores with the highest SLA breach rate are shown below. Worst: ST012 at 92.9%.,"store_id,orders,breach_rate
+ST012,985,92.9
+ST080,977,92.6
+ST042,972,92.4
+",data,orders.csv (sla_breached by store),,0.04,1.0,1.0,0.0
+D13,data,Find the three pickers whose picking times are highest.,NONE,The 3 slowest pickers by average pick time (minimum 10 orders) are shown below.,"picker_id,orders,avg_pick_min
+PICK01192,10,16.8
+PICK00505,13,16.0
+PICK00208,20,16.0
+",data,picking.csv (pick_duration_minutes),,0.03,1.0,1.0,0.0
+D14,data,What is the average time taken to complete picking at ST019?,NONE,Average pick duration for ST019: 14.8 minutes; 11.8% of picks exceed 20 minutes (246 picks).,,data,picking.csv (pick_duration_minutes),,0.07,1.0,1.0,0.0
+D15,data,How long do riders wait on average before assignment?,NONE,"Average rider assignment delay: 8.2 minutes; 2.3% of deliveries waited over 15 minutes (25,000 deliveries).",,data,delivery.csv (assignment_delay_minutes),,0.0,1.0,1.0,0.0
+D16,data,Are there any products with zero available inventory?,NONE,3 SKU-store combination(s) are completely out of stock.,"store_id,sku_id,system_stock,physical_stock
+ST082,SKU0085,17,0
+ST095,SKU0223,18,0
+ST068,SKU0073,17,0
+",data,inventory.csv (stockout),,0.01,1.0,1.0,0.0
+D17,data,Which locations have the weakest inventory accuracy?,NONE,The 5 stores with the lowest average inventory accuracy are shown below. Lowest: ST068 at 87.8%.,"store_id,avg_accuracy_pct
+ST068,87.8
+ST051,87.9
+ST041,87.9
+ST042,88.0
+ST066,88.1
+",data,inventory.csv (inventory_accuracy_pct),,0.01,1.0,1.0,0.0
+D18,data,How many high and critical operational exceptions were detected?,NONE,"16,424 exceptions detected (14,473 high/critical, 1,951 medium severity). Most common categories: Inventory Discrepancy: 10,971, Missing Items: 2,920, Slow Pick: 1,547.","type,count
+Inventory Discrepancy,10971
+Missing Items,2920
+Slow Pick,1547
+High Assignment Delay,579
+Overloaded Employee,404
+Stockout,3
+",data,exception_engine (rule-based),,2.63,1.0,1.0,0.0
+D19,data,Give me an operational overview of ST098.,NONE,Average pick duration for ST098: 11.1 minutes; 2.3% of picks exceed 20 minutes (6 of 261 picks).,,data,"orders, picking, delivery, inventory",,0.07,1.0,1.0,0.0
+D20,data,What percentage of orders have an SLA breach?,NONE,"SLA breach rate across all stores: 89.7% (89,674 of 100,000 orders).",,data,orders.csv (sla_breached),,0.0,1.0,1.0,0.0
+D21,data,Show the top ten orders at risk of missing their SLA.,NONE,Top 10 orders by predicted breach risk (historical test-period orders scored in demonstration mode).,"order_id,store_id,risk_probability,risk_tier
+ORD-069643,ST080,0.916,High
+ORD-014851,ST089,0.885,High
+ORD-087243,ST002,0.884,High
+ORD-055606,ST018,0.875,High
+ORD-039348,ST009,0.873,High
+ORD-063350,ST074,0.871,High
+ORD-033311,ST056,0.867,High
+ORD-062174,ST076,0.863,High
+ORD-027181,ST001,0.859,High
+ORD-037127,ST002,0.856,High
+",data,sla_model.pkl,,0.93,1.0,1.0,0.0
+D22,data,Which stores have the highest SLA breach rates?,NONE,The 5 stores with the highest SLA breach rate are shown below. Worst: ST012 at 92.9%.,"store_id,orders,breach_rate
+ST012,985,92.9
+ST080,977,92.6
+ST042,972,92.4
+ST024,989,92.4
+ST045,989,92.2
+",data,orders.csv (sla_breached by store),,0.02,1.0,1.0,0.0
+D23,data,Identify the most frequently reported exception types.,NONE,"16,424 exceptions detected (14,473 high/critical, 1,951 medium severity). Most common categories: Inventory Discrepancy: 10,971, Missing Items: 2,920, Slow Pick: 1,547.","type,count
+Inventory Discrepancy,10971
+Missing Items,2920
+Slow Pick,1547
+High Assignment Delay,579
+Overloaded Employee,404
+Stockout,3
+",data,exception_engine (rule-based),,1.76,1.0,1.0,0.0
+D24,data,Which stores have employees carrying excessive pending workloads?,NONE,The 5 stores with the highest average pending tasks per employee are shown below.,"store_id,avg_pending,overloaded
+ST029,6.61,15
+ST080,6.53,5
+ST079,6.53,4
+ST100,6.5,4
+ST010,6.48,8
+",data,workforce.csv (tasks_pending),,0.02,1.0,1.0,0.0
+D25,data,What is the average rider assignment delay at ST044?,NONE,Average rider assignment delay for ST044: 8.1 minutes; 0.4% of deliveries waited over 15 minutes (243 deliveries).,,data,delivery.csv (assignment_delay_minutes),,0.02,1.0,1.0,0.0
+D26,data,What is the current live rider availability across all stores?,NONE,"No matching procedure found in the SOPs. I can answer questions about SLA breach rate, worst stores, slow pickers, picking time, rider assignment delay, stockouts, inventory accuracy, overloaded stores, exceptions, and at-risk orders, or look up an SOP.",,no_answer,,,0.33,1.0,1.0,0.0
+D27,data,Show the historical weekly sales trend for the previous six months.,NONE,"No matching procedure found in the SOPs. I can answer questions about SLA breach rate, worst stores, slow pickers, picking time, rider assignment delay, stockouts, inventory accuracy, overloaded stores, exceptions, and at-risk orders, or look up an SOP.",,no_answer,,,0.03,1.0,1.0,0.0
+D28,data,Which individual rider is online and available right now?,NONE,"No matching procedure found in the SOPs. I can answer questions about SLA breach rate, worst stores, slow pickers, picking time, rider assignment delay, stockouts, inventory accuracy, overloaded stores, exceptions, and at-risk orders, or look up an SOP.",,no_answer,,,0.02,1.0,1.0,0.0
+D29,data,What is the current customer satisfaction score for each store?,NONE,"No matching procedure found in the SOPs. I can answer questions about SLA breach rate, worst stores, slow pickers, picking time, rider assignment delay, stockouts, inventory accuracy, overloaded stores, exceptions, and at-risk orders, or look up an SOP.",,no_answer,,,0.02,1.0,1.0,0.0
+D30,data,What will tomorrow's weather be in Amritsar?,NONE,"No matching procedure found in the SOPs. I can answer questions about SLA breach rate, worst stores, slow pickers, picking time, rider assignment delay, stockouts, inventory accuracy, overloaded stores, exceptions, and at-risk orders, or look up an SOP.",,no_answer,,,0.03,1.0,1.0,0.0

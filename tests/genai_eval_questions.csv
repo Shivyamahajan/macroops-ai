@@ -1,0 +1,62 @@
+
+id,type,question,expected_source
+S01,sop,How should staff investigate an inventory mismatch greater than 10 units?,sop_inventory_discrepancy.txt
+S02,sop,A product has a broken seal after picking. What action is required?,sop_damaged_items.txt
+S03,sop,What should a picker do when an ordered product cannot be located?,sop_missing_items.txt
+S04,sop,At what point must slow picking be escalated to the Operations Manager?,sop_slow_picking.txt
+S05,sop,What is the escalation process when an order waits too long for rider assignment?,sop_rider_delay_shortage.txt
+S06,sop,How do staff document an exception after resolving it?,sop_exception_logging.txt
+S07,sop,What action should a supervisor take when a worker has too many pending tasks?,sop_overloaded_staff.txt
+S08,sop,Which authority handles a store experiencing repeated SLA breaches?,escalation_matrix.txt
+S09,sop,What is the refund policy for deliveries to Mars?,NONE
+S10,sop,How should a damaged product be removed from picking stock?,sop_damaged_items.txt
+S11,sop,What details must be recorded when an inventory discrepancy is discovered?,sop_inventory_discrepancy.txt
+S12,sop,What should happen when an item is missing during order fulfilment?,sop_missing_items.txt
+S13,sop,When should a slow picking issue be reported to management?,sop_slow_picking.txt
+S14,sop,How should the store respond when no delivery rider is available?,sop_rider_delay_shortage.txt
+S15,sop,What information belongs in an exception log?,sop_exception_logging.txt
+S16,sop,How can supervisors redistribute work when staff become overloaded?,sop_overloaded_staff.txt
+S17,sop,Who should receive an escalation for a serious operational SLA issue?,escalation_matrix.txt
+S18,sop,What is the correct process for identifying and recording damaged goods?,sop_damaged_items.txt
+S19,sop,How should staff handle a stock count that does not match system inventory?,sop_inventory_discrepancy.txt
+S20,sop,What steps are required before marking an unavailable item as missing?,sop_missing_items.txt
+S21,sop,What should the team do if picking regularly exceeds its expected time?,sop_slow_picking.txt
+S22,sop,How should an order be handled when rider assignment is delayed?,sop_rider_delay_shortage.txt
+S23,sop,What happens after an operational exception has been closed?,sop_exception_logging.txt
+S24,sop,What warning signs indicate that an employee needs workload support?,sop_overloaded_staff.txt
+S25,sop,How are responsibilities assigned across different escalation levels?,escalation_matrix.txt
+S26,sop,Which procedure explains the classification of rainfall in millimetres?,NONE
+S27,sop,What is the process for replacing a damaged item when replacement stock is available?,sop_damaged_items.txt
+S28,sop,How should repeated inventory mismatches be reported and investigated?,sop_inventory_discrepancy.txt
+S29,sop,What should staff do when a delivery order cannot be assigned to a rider?,sop_rider_delay_shortage.txt
+S30,sop,Can the SOP assistant provide the exact current weather in London?,NONE
+D01,data,What percentage of all orders experienced an SLA breach?,NONE
+D02,data,Rank the five stores with the highest SLA breach rates.,NONE
+D03,data,List the five pickers with the longest average picking times.,NONE
+D04,data,How many minutes does picking take on average?,NONE
+D05,data,Calculate the mean delay between order readiness and rider assignment.,NONE
+D06,data,Show the products or SKUs that currently have stockouts.,NONE
+D07,data,Identify the five stores with the poorest inventory accuracy.,NONE
+D08,data,Give me the total number of detected operational exceptions.,NONE
+D09,data,How many orders breached the SLA at ST044?,NONE
+D10,data,Which orders have the highest predicted risk of an SLA breach?,NONE
+D11,data,What are the most common operational exception categories?,NONE
+D12,data,Show the three stores performing worst on SLA compliance.,NONE
+D13,data,Find the three pickers whose picking times are highest.,NONE
+D14,data,What is the average time taken to complete picking at ST019?,NONE
+D15,data,How long do riders wait on average before assignment?,NONE
+D16,data,Are there any products with zero available inventory?,NONE
+D17,data,Which locations have the weakest inventory accuracy?,NONE
+D18,data,How many high and critical operational exceptions were detected?,NONE
+D19,data,Give me an operational overview of ST098.,NONE
+D20,data,What percentage of orders have an SLA breach?,NONE
+D21,data,Show the top ten orders at risk of missing their SLA.,NONE
+D22,data,Which stores have the highest SLA breach rates?,NONE
+D23,data,Identify the most frequently reported exception types.,NONE
+D24,data,Which stores have employees carrying excessive pending workloads?,NONE
+D25,data,What is the average rider assignment delay at ST044?,NONE
+D26,data,What is the current live rider availability across all stores?,NONE
+D27,data,Show the historical weekly sales trend for the previous six months.,NONE
+D28,data,Which individual rider is online and available right now?,NONE
+D29,data,What is the current customer satisfaction score for each store?,NONE
+D30,data,What will tomorrow's weather be in Amritsar?,NONE

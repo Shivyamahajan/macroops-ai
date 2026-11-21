@@ -15,14 +15,11 @@ from src.ai import copilot_tools as T
 INTENTS = [
     ('at_risk',       r'at risk|risk of|likely to (breach|miss)|predicted|risky', T.at_risk_orders),
     ('exceptions',    r'exception', T.exception_counts),
-    ('stockouts',     r'stock.?out|out of stock', T.stockouts),
-    ('slow_pickers',  r'(slow|worst|slowest).{0,15}picker|picker.{0,15}(slow|worst)', T.slowest_pickers),
-    ('avg_pick',      r'pick(ing)?\s+(time|duration)|how long.{0,15}pick', T.avg_pick),
-    ('assignment',    r'assignment|rider.{0,20}(delay|wait)|delay.{0,20}rider', T.assignment_delay),
-    ('inv_stores',    r'inventory.{0,20}accuracy|accuracy.{0,20}inventory|lowest accuracy', T.low_inventory_stores),
+    ('stockouts', r'stock.?out|out of stock|zero available inventory|zero inventory|no available inventory|completely out', T.stockouts),    ('slow_pickers',  r'(slow|worst|slowest|longest|highest).{0,30}picker|picker.{0,30}(slow|worst|longest|highest)|picker.{0,20}(picking )?times?.{0,20}(highest|longest)', T.slowest_pickers),
+    ('avg_pick', r'average.{0,20}pick(ing)?.{0,20}(time|duration)|average.{0,20}(time|duration).{0,30}pick(ing)?|pick(ing)?.{0,15}(time|duration)|how long.{0,15}pick|how many minutes.{0,20}pick', T.avg_pick),    ('inv_stores',    r'inventory.{0,20}accuracy|accuracy.{0,20}inventory|lowest accuracy', T.low_inventory_stores),
+    ('assignment', r'assignment|rider.{0,30}(delay|wait|assign)|delay.{0,30}rider|ready.{0,30}rider', T.assignment_delay),
     ('overloaded',    r'overload|pending tasks|workload', T.overloaded_stores),
-    ('worst_stores',  r'(worst|poor|lowest|bottom).{0,20}store|which store|store.{0,20}(worst|performing)', T.worst_stores),
-    ('store_summary', r'summary|overview|how is', T.store_summary),
+    ('worst_stores',  r'(worst|poor|lowest|bottom|highest|top).{0,30}store|store.{0,30}(worst|poor|lowest|bottom|highest|top|breach rate)|which store', T.worst_stores),    ('store_summary', r'summary|overview|how is', T.store_summary),
     ('breach',        r'\bsla\b|breach|on.?time', T.sla_breach),
 ]
 
@@ -37,20 +34,31 @@ SUGGESTIONS = ("I can answer questions about SLA breach rate, worst stores, "
                "exceptions, and at-risk orders, or look up an SOP.")
 
 
+
 def _extract_n(q, default=5):
-    m = (
-        re.search(
-            r'\b(?:top|worst|best|bottom|slowest)\s+(\d+)', q, re.I
-        )
-        or re.search(
-            r'\b(\d+)\s+(?:slowest|worst|best)\s+(?:stores|pickers|orders)\b',
-            q, re.I
-        )
-        or re.search(
-            r'\b(\d+)\s+(?:stores|pickers|orders)\b', q, re.I
-        )
+    numbers = {
+        "one": 1, "two": 2, "three": 3, "four": 4,
+        "five": 5, "six": 6, "seven": 7, "eight": 8,
+        "nine": 9, "ten": 10
+    }
+
+    pattern = (
+        r'\b(?:top|worst|best|bottom|slowest)?\s*'
+        r'(?:the\s+)?(\d+|one|two|three|four|five|six|seven|'
+        r'eight|nine|ten)\s+'
+        r'(?:slowest|worst|best|highest|lowest)?\s*'
+        r'(?:stores|pickers|orders)\b'
     )
-    return max(1, min(int(m.group(1)), 20)) if m else default
+
+    m = re.search(pattern, q, re.I)
+
+    if not m:
+        return default
+
+    value = m.group(1).lower()
+    n = int(value) if value.isdigit() else numbers[value]
+
+    return max(1, min(n, 20))
 
 
 def _extract_store(q):
@@ -78,9 +86,11 @@ class OperationsCopilot:
 
         # light memory: "and for ST012?" reuses the previous intent
         if name is None and store and self.last_intent:
-            name, fn = next((i, f) for i, _p, f in INTENTS
-                            if i == self.last_intent), (None, None)
-            name, fn = self.last_intent, fn
+            name, fn = next(
+                ((i, f) for i, _p, f in INTENTS
+                 if i == self.last_intent),
+                (None, None)
+            )
 
         parts, table, sources, mode = [], None, [], 'data'
         if fn:

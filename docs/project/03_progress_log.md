@@ -227,3 +227,44 @@ Updated every working day.
 * Integrated SHAP-based explanations and suggested operational actions.
 * Displayed historical SLA outcomes and clarified that predictions are not live.
 * Successfully tested all four dashboard pages and captured screenshots.
+
+### Week 7 (Nov 2–20) — GenAI Layer Development and Evaluation
+
+**Nov 2–6: SOP Knowledge Base and RAG Assistant**
+
+* Created a knowledge base containing 10 operational SOP and reference documents.
+* Implemented document loading, text chunking, and embedding generation using `all-MiniLM-L6-v2`.
+* Integrated ChromaDB for vector storage and semantic retrieval.
+* Implemented the RAG pipeline using LangChain components and Ollama with Qwen2.5:1.5b.
+* Added MMR retrieval, relevance thresholding, SOP-grounded generation, and no-match handling.
+* Implemented retrieval-only fallback for environments where the local language model is unavailable.
+* Added deterministic rider delay procedure responses and damaged-item safety safeguards.
+* Tested supported procedural questions and unrelated questions.
+
+**Nov 7–13: AI Operations Copilot**
+
+* Developed 11 deterministic Pandas-based operational tools in `src/ai/copilot_tools.py`.
+* Implemented intent detection and query routing in `src/ai/copilot.py`.
+* Integrated operational queries for SLA breaches, store performance, picking delays, rider assignment, stockouts, inventory accuracy, workload, exceptions, at-risk orders, and store summaries.
+* Added SOP question routing and follow-up handling.
+* Tested numerical outputs against the underlying operational datasets.
+
+**Nov 14–18: Dashboard Integration**
+
+* Developed the AI Operations Copilot dashboard page in `src/app/pages/page_05_copilot.py`.
+* Developed the SOP Assistant dashboard page in `src/app/pages/page_06_sop.py`.
+* Integrated both pages into the main Streamlit navigation.
+* Tested generated responses and deterministic operational answers.
+* Verified retrieval-only fallback functionality.
+
+**Nov 19–20: GenAI Evaluation and Documentation**
+
+* Created a 60-question evaluation dataset containing 30 SOP questions and 30 operational data questions.
+* Implemented the evaluation runner in `src/ai/evaluate_genai.py`.
+* Recorded answers, execution modes, sources, retrieval information, and response latency.
+* Manually reviewed and graded all 60 evaluation responses.
+* Achieved 93.3% answer accuracy, 96.7% groundedness, and a 3.3% hallucination rate.
+* Achieved 96.7% SOP retrieval relevance and a mean response time of 4.9 seconds.
+* Met all five specified evaluation targets.
+* Documented the GenAI architecture, technology stack, configuration, design decisions, evaluation results, limitations, and future improvements in `docs/technical/genai_documentation.md`.
+* Recorded the FR-016 scope deviation regarding unavailable live rider availability data.

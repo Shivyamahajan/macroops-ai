@@ -74,10 +74,13 @@ def avg_pick(store=None, **_):
         return _res("No picking records for that selection.",
                     source='picking.csv')
     where = f" for {store}" if store else ""
+    slow_count = int((p['pick_duration_minutes'] > 20).sum())
+    slow_pct = (p['pick_duration_minutes'] > 20).mean() * 100
+
     return _res(f"Average pick duration{where}: "
                 f"{p['pick_duration_minutes'].mean():.1f} minutes; "
-                f"{(p['pick_duration_minutes'] > 20).mean()*100:.1f}% of "
-                f"picks exceed 20 minutes ({len(p):,} picks).",
+                f"{slow_pct:.1f}% of picks exceed 20 minutes "
+                f"({slow_count:,} of {len(p):,} picks).",
                 source='picking.csv (pick_duration_minutes)')
 
 
@@ -147,12 +150,20 @@ def exception_counts(store=None, **_):
 
     high = ex['severity'].isin(['High', 'Critical']).sum()
     medium = (ex['severity'] == 'Medium').sum()
-
     where = f" for {store}" if store else ""
+
+    top_categories = (
+        ", ".join(
+            f"{row['type']}: {row['count']:,}"
+            for _, row in t.head(3).iterrows()
+        )
+        if not t.empty else "No exceptions found"
+    )
 
     return _res(
         f"{len(ex):,} exceptions detected{where} "
-        f"({high:,} high/critical, {medium:,} medium severity).",
+        f"({high:,} high/critical, {medium:,} medium severity). "
+        f"Most common categories: {top_categories}.",
         t if not t.empty else None,
         'exception_engine (rule-based)'
     )
